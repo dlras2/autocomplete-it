@@ -29,7 +29,7 @@ describe('Unit | AutocompleteIt', () => {
     // Act
     const ai = new AI(values);
     // Assert
-    assert.deepEqual(ai.options, {});
+    assert.deepEqual(ai._options, {});
   });
 
   it('should accept options object', () => {
@@ -39,6 +39,6 @@ describe('Unit | AutocompleteIt', () => {
     // Act
     const ai = new AI(values, options);
     // Assert
-    assert.equal(ai.options, options);
+    assert.equal(ai._options, options);
   });
 });

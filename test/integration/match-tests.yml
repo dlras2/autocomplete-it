@@ -1,0 +1,6 @@
+- query: a
+  values:
+  - abcd
+  - bcde
+  result:
+  - abcd
