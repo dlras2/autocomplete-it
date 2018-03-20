@@ -1,0 +1,19 @@
+{
+  "author": "Daniel Rasmussen <development@dlras.net> (https://dlras.net/)",
+  "bugs": {
+    "url": "https://github.com/dlras2/autocomplete-it/issues"
+  },
+  "description": "",
+  "homepage": "https://github.com/dlras2/autocomplete-it#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "autocomplete-it",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlras2/autocomplete-it.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.0"
+}
