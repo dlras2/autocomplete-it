@@ -4,16 +4,61 @@
     "url": "https://github.com/dlras2/autocomplete-it/issues"
   },
   "description": "",
+  "devDependencies": {
+    "clear-require": "^2.0.0",
+    "eslint": "^4.15.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.5.0",
+    "husky": "^0.15.0-rc.3",
+    "js-yaml": "^3.10.0",
+    "jszip": "^3.1.5",
+    "lint-staged": "^6.1.0",
+    "mocha": "^5.0.0",
+    "mock-fs": "^4.4.2",
+    "mock-require": "^3.0.1",
+    "npm-run-all": "^4.1.2",
+    "nyc": "^11.4.1",
+    "prettier": "^1.10.2"
+  },
   "homepage": "https://github.com/dlras2/autocomplete-it#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  },
   "license": "ISC",
-  "main": "index.js",
+  "lint-staged": {
+    "*.js": [
+      "node ./node_modules/eslint/bin/eslint.js --fix",
+      "git add"
+    ]
+  },
+  "main": "lib/index.js",
   "name": "autocomplete-it",
+  "nyc": {
+    "all": true,
+    "exclude": [
+      "coverage",
+      "test"
+    ],
+    "reporter": [
+      "html",
+      "text"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dlras2/autocomplete-it.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "coverage": "node ./node_modules/nyc/bin/nyc npm run test-all && cmd /c start ./coverage/index.html",
+    "fix": "node ./node_modules/eslint/bin/eslint.js . --fix --ignore-path .gitignore",
+    "lint": "node ./node_modules/eslint/bin/eslint.js . --ignore-path .gitignore",
+    "test": "node ./node_modules/npm-run-all/bin/npm-run-all lint test-all -nc --silent",
+    "test-all": "node ./node_modules/mocha/bin/mocha",
+    "test-integration": "node ./node_modules/mocha/bin/mocha --grep Integration",
+    "test-unit": "node ./node_modules/mocha/bin/mocha --grep Unit"
   },
   "version": "0.0.0"
 }
