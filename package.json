@@ -3,6 +3,9 @@
   "bugs": {
     "url": "https://github.com/dlras2/autocomplete-it/issues"
   },
+  "dependencies": {
+    "diacritics": "^1.3.0"
+  },
   "description": "",
   "devDependencies": {
     "clear-require": "^2.0.0",

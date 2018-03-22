@@ -1,6 +1,25 @@
 - query: a
-  values:
-  - abcd
-  - bcde
+  inputs:
+  - a
+  - b
+  - c
   result:
-  - abcd
+  - a
+- query: abc
+  inputs:
+  - abc
+  - ad bc
+  - alpha beta
+  - alphabetical
+  result:
+  - abc
+  - ad bc
+- query: a b
+  inputs:
+  - abc
+  - ad bc
+  - alpha beta
+  - alphabetical
+  result:
+  - ad bc
+  - alpha beta

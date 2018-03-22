@@ -9,21 +9,21 @@ const matchTests = yaml.load(
 
 describe('Integration | match()', () => {
   for (const matchTest of matchTests) {
-    const values = matchTest.values;
+    const inputs = matchTest.inputs;
     const instanceOptions = matchTest.instanceOptions;
     const query = matchTest.query;
     const matchOptions = matchTest.matchOptions;
     const expected = matchTest.result;
     const description =
       matchTest.description ||
-      `"${query}" should match ${expected.length} of ${values.length} values`;
+      `"${query}" should match ${expected.length} of ${inputs.length} inputs`;
     it(description, () => {
       // Arrange
-      const ai = new AI(values, instanceOptions);
+      const ai = new AI(inputs, instanceOptions);
       // Act
       const actual = ai.match(query, matchOptions);
       // Assert
-      assert.deepEqual(actual, expected);
+      assert.deepEqual(Array.from(actual), expected);
     });
   }
 });
