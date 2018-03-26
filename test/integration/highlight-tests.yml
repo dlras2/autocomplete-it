@@ -9,5 +9,5 @@
     - a b (c)
 - query: abc
   highlights:
-    - (a) (b) (c)
     - (abc)
+    - (a) (b) (c)

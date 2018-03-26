@@ -17,7 +17,7 @@ describe('Integration | Highlight', () => {
     if (lookupOptions) {
       lookupOptions.highlight = '()';
     }
-    it.skip(description, () => {
+    it(description, () => {
       // Arrange
       const ai = new AI(inputs, instanceOptions);
       // Act
