@@ -1,0 +1,20 @@
+- query: a
+  matches:
+    - a
+  ignores:
+    - b
+    - c
+- query: abc
+  matches:
+    - abc
+    - ad bc
+  ignores:
+    - alpha beta
+    - alphabetical
+- query: a b
+  matches:
+    - ad bc
+    - alpha beta
+  ignores:
+    - abc
+    - alphabetical

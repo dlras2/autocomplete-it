@@ -1,0 +1,13 @@
+- query: a
+  highlights:
+    - (a) b c
+- query: b
+  highlights:
+    - a (b) c
+- query: c
+  highlights:
+    - a b (c)
+- query: abc
+  highlights:
+    - (a) (b) (c)
+    - (abc)
