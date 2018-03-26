@@ -3,7 +3,7 @@ const mock = require('mock-require');
 
 let AI;
 
-describe('Unit | AutocompleteIt', () => {
+describe('Unit | AI', () => {
   beforeEach(() => {
     AI = mock.reRequire('../../lib/autocomplete-it');
   });
