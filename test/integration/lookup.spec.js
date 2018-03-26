@@ -16,7 +16,7 @@ describe('Integration | Lookup', () => {
       instanceOptions,
       lookupOptions
     } = lookupTest;
-    const inputs = [].concat(matches).concat(ignores);
+    const inputs = [].concat(matches || [], ignores || []);
     let description = lookupTest.description;
     if (!description) {
       if (matches && ignores) {

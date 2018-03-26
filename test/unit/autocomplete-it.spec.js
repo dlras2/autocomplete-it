@@ -29,7 +29,7 @@ describe('Unit | AutocompleteIt', () => {
     // Act
     const ai = new AI(inputs);
     // Assert
-    assert.deepEqual(ai.options, {});
+    assert.ok(ai.options);
   });
 
   it('should accept options object', () => {

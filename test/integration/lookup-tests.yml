@@ -18,3 +18,32 @@
   ignores:
     - abc
     - alphabetical
+- query: xyz
+  matches:
+    - xyz
+    - mno xyz
+    - x yz
+    - abc x yz
+- query: a
+  matches:
+    - a01
+    - a02
+    - a03
+    - a04
+    - a05
+    - a06
+    - a07
+    - a08
+    - a09
+    - a10
+  ignores:
+    - a11
+- query: a
+  lookupOptions:
+    limit: 3
+  matches:
+    - a01
+    - a02
+    - a03
+  ignores:
+    - a04
