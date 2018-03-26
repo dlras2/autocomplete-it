@@ -13,3 +13,23 @@
     - (abc)d
     - (abc)de
     - (a) (b) (c)
+- query: aether
+  highlights:
+    - "(\u00C6\u00FEer)"
+    - "(\u00C6\u00FEer)ize"
+    - "Frozen (\u00C6\u00FEer)"
+- query: it 9
+  highlights:
+    - "(It)'s over (9),000!"
+- query: its 90
+  highlights:
+    - "(It's) over (9,0)00!"
+- query: pc
+  highlights:
+    - "(P)ascal(C)ase"
+- query: js
+  highlights:
+    - "blahBlah(JS)ON"
+- query: b js
+  highlights:
+    - "(bJS)ON"

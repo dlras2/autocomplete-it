@@ -163,4 +163,54 @@ describe('Unit | AI', () => {
       assert.equal(actual, expected);
     });
   });
+
+  describe('applySpanMap', () => {
+    it('should map "AE(th)er (90)00" to "Æ(þ)er (9,0)00"', () => {
+      // Arrange
+      const map = [-1, -1, 0, 0, 0, 0, 1, 0, 0, 0];
+      // AE(th)er (90)00 => Æ(þ)er (9,0)00
+      const spans = [2, 2, 3, 2];
+      const expected = [1, 1, 3, 3];
+      // Act
+      AI.applySpanMap(spans, map);
+      // Assert
+      assert.deepEqual(spans, expected);
+    });
+
+    it('should map "(Its) over (90)00!" to "(It\'s) over (9,0)00!"', () => {
+      // Arrange
+      const map = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0];
+      // (Its) over (90)00! => (It's) over (9,0)00!
+      const spans = [0, 3, 6, 2];
+      const expected = [0, 4, 6, 3];
+      // Act
+      AI.applySpanMap(spans, map);
+      // Assert
+      assert.deepEqual(spans, expected);
+    });
+
+    it('should map "(P)ascal (C)ase" to "(P)ascal(C)ase"', () => {
+      // Arrange
+      const map = [0, 0, 0, 0, 0, 0, -1, 0, 0, 0];
+      // (P)ascal (C)ase => (P)ascal(C)ase
+      const spans = [0, 1, 6, 1];
+      const expected = [0, 1, 5, 1];
+      // Act
+      AI.applySpanMap(spans, map);
+      // Assert
+      assert.deepEqual(spans, expected);
+    });
+
+    it('should map "blah Blah (JS)ON" to "blahBlah(JS)ON"', () => {
+      // Arrange
+      const map = [0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0];
+      // blah Blah (JS)ON => blahBlah(JS)ON
+      const spans = [10, 2];
+      const expected = [8, 2];
+      // Act
+      AI.applySpanMap(spans, map);
+      // Assert
+      assert.deepEqual(spans, expected);
+    });
+  });
 });
