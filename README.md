@@ -1,6 +1,6 @@
 # autocomplete-it
 
-[![npm](https://img.shields.io/npm/v/autocomplete-it.svg)](https://www.npmjs.com/package/autocomplete-it)
+[![npm](https://img.shields.io/npm/v/autocomplete-it.svg)](https://www.npmjs.com/package/autocomplete-it) ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/autocomplete-it.svg)
 
 Use autocomplete-it to implement intelligent autocomplete functionality in your app. Queries can match parts of the beginnings of sequential words, and matches can optionally be wrapped for client-side highlighting.
 
