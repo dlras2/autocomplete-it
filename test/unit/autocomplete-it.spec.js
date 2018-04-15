@@ -76,7 +76,7 @@ describe('Unit | AI', () => {
       const { key, map } = AI.mapDiacritics(input);
       // Assert
       assert.equal(key, expectedKey);
-      assert.deepEqual(map, expectedMap);
+      assert.deepEqual(Array.from(map), expectedMap);
     });
   });
 
@@ -102,7 +102,7 @@ describe('Unit | AI', () => {
       const { key, map } = AI.mapNonBreakingPunctuation(input);
       // Assert
       assert.equal(key, expectedKey);
-      assert.deepEqual(map, expectedMap);
+      assert.deepEqual(Array.from(map), expectedMap);
     });
   });
 
@@ -128,7 +128,7 @@ describe('Unit | AI', () => {
       const { key, map } = AI.mapSplitCasing(input);
       // Assert
       assert.equal(key, expectedKey);
-      assert.deepEqual(map, expectedMap);
+      assert.deepEqual(Array.from(map), expectedMap);
     });
 
     it('should treat acronyms as a single word', () => {
@@ -140,7 +140,7 @@ describe('Unit | AI', () => {
       const { key, map } = AI.mapSplitCasing(input);
       // Assert
       assert.equal(key, expectedKey);
-      assert.deepEqual(map, expectedMap);
+      assert.deepEqual(Array.from(map), expectedMap);
     });
   });
 

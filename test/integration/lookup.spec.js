@@ -37,7 +37,11 @@ describe('Integration | Lookup', () => {
       // Act
       const actual = ai.lookup(query, lookupOptions);
       // Assert
-      assert.deepEqual(Array.from(actual), matches);
+      if (matches) {
+        assert.deepEqual(Array.from(actual), matches);
+      } else {
+        assert.equal(actual.length, 0);
+      }
     });
   }
 });

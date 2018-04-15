@@ -13,6 +13,10 @@
     - (abc)d
     - (abc)de
     - (a) (b) (c)
+- query: ae
+  highlights:
+    - "(\u00C6)\u00FEer"
+    - "Frozen (\u00C6)\u00FEer"
 - query: aether
   highlights:
     - "(\u00C6\u00FEer)"
