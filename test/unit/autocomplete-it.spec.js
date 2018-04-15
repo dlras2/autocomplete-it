@@ -42,6 +42,20 @@ describe('Unit | AI', () => {
     assert.equal(ai.options, options);
   });
 
+  describe('map', () => {
+    it('should merge sequential mappers', () => {
+      // Arrange
+      const input = "\u00C6\u00FEermage's Touch";
+      const expectedKey = 'AEthermages Touch';
+      const expectedMap = [[-1, -1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]];
+      // Act
+      const { key, map } = AI.map(input);
+      // Assert
+      assert.equal(key, expectedKey);
+      assert.deepEqual(map, expectedMap);
+    });
+  });
+
   describe('mapDiacritics', () => {
     it('should ignore inputs without diacritics', () => {
       // Arrange
