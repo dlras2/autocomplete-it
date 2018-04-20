@@ -13,6 +13,7 @@
     - (abc)d
     - (abc)de
     - (a) (b) (c)
+    - (a) (bc) c
 - query: ae
   highlights:
     - "(\u00C6)\u00FEer"
