@@ -40,3 +40,12 @@
 - query: ae t
   highlights:
     - "(\u00C6)\u00FEermage's(T)ouch"
+- query: ab
+  highlights:
+    - "(ab) bc"
+- query: a b
+  highlights:
+    - "(a)b (b) b"
+- query: a bc
+  highlights:
+    - "(a)b (bc)"
